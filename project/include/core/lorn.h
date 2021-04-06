@@ -5,7 +5,7 @@
 
 class Lorn {
 	public:
-		int start();
+		int gameStart();
 	private:
 
 };

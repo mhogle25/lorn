@@ -1,6 +1,6 @@
 #ifndef MAIN
 #define MAIN
 
-#include "lorn.h"
+#include "core/lorn.h"
 
 #endif

@@ -1,5 +1,5 @@
-#include "lorn.h"
+#include "core/lorn.h"
 
-int Lorn::start() {
+int Lorn::gameStart() {
 	return 0;
 }
