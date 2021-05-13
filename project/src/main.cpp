@@ -2,5 +2,5 @@
 
 int main() {
 	Lorn lorn;
-	return lorn.gameStart();
+	return lorn.begin();
 }
