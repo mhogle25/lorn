@@ -6,6 +6,8 @@
 #include "core/game.h"
 #include "core/types.h"
 #include<vector>
+#include<algorithm>
+#include<iostream>
 #include<string>
 #include<map>
 #include<functional>
@@ -16,8 +18,8 @@ class Lorn {
 		~Lorn();
 		int begin();
 	private:
-		Game* game;
-		std::map<std::string, std::function<Action>>* actions;
+		Game game;
+		std::map<std::string, std::function<Action> > actions;
 
 		int newGame(std::vector<std::string>*);
 		int loadGame(std::vector<std::string>*);
