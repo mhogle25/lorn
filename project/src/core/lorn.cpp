@@ -2,12 +2,6 @@
 
 Lorn::Lorn() {
 	/*
-	//Begin giving keys to the actions
-	actions["new"] = [this](std::vector<std::string>* s) {
-		newGame(s);
-	}
-	*/
-	
 	auto act = [](std::vector<std::string> s) {
 		std::cout << "hello\n";
 		return 0;
@@ -34,10 +28,10 @@ Lorn::Lorn() {
 	};
 
 	actions.insert(std::pair<std::string, std::function<Action>> ("new", f2));
-	
-	actions.insert(std::pair<std::string, std::function<Action>> ("new1", [](std::vector<std::string>* s) {
-		std::cout << "hello\n";
-		return 0;
+	*/
+
+	actions.insert(std::pair<std::string, std::function<Action>> ("new", [this](std::vector<std::string>* s) {
+		return newGame(s);
 	}));
 }
 	
