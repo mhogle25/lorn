@@ -4,6 +4,9 @@
 #include<vector>
 #include<string>
 
-typedef int Action (std::vector<std::string>*);
+namespace types {
+    typedef std::vector<std::string>* ACTION_ARGS;
+    typedef int ACTION (ACTION_ARGS);
+}
 
 #endif

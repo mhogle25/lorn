@@ -2,55 +2,44 @@
 
 Lorn::Lorn() {
 	/*
-	auto act = [](std::vector<std::string> s) {
-		std::cout << "hello\n";
-		return 0;
+	auto act = [this](std::vector<std::string> s) {
+		return newGame(s);
 	};
 
-	auto lambda = [](int value) { 
+	auto lambda = [this](int value) { 
 		std::cout << "value: " << value << "\n";
-
 	};
 
-	int(*action)(std::vector<std::string>*) = [](std::vector<std::string>* s) {
-		std::cout << "hello\n";
-		return 0;
+	int(*action)(std::vector<std::string>*) = [this](std::vector<std::string>* s) {
+		return newGame(s);
 	};
 
-	std::function<int(std::vector<std::string>*)> f = [](std::vector<std::string>* s) {
-		std::cout << "hello\n";
-		return 0;
+	std::function<int(std::vector<std::string>*)> f = [this](std::vector<std::string>* s) {
+		return newGame(s);
 	};
 
-	std::function<Action> f2 = [](std::vector<std::string>* s) {
-		std::cout << "hello\n";
-		return 0;
+	std::function<Action> f2 = [this](std::vector<std::string>* s) {
+		return newGame(s);
 	};
 
 	actions.insert(std::pair<std::string, std::function<Action>> ("new", f2));
-	*/
-
+	
 	actions.insert(std::pair<std::string, std::function<Action>> ("new", [this](std::vector<std::string>* s) {
 		return newGame(s);
 	}));
+	*/
+
+	newGame = [this](types::ACTION_ARGS s) {
+		return 0;
+	};
+
+	actions.insert(std::pair<std::string, std::function<types::ACTION>*>{ commands::NEW, &newGame });
 }
-	
 
 Lorn::~Lorn() {
+
 }
 
 int Lorn::begin() {
-	return 0;
-}
-
-int Lorn::newGame(std::vector<std::string>* s) {
-	if (s != nullptr) {
-	}
-	return 0;
-}
-
-int Lorn::loadGame(std::vector<std::string>* s) {
-	if (s != nullptr) {
-	}
 	return 0;
 }
