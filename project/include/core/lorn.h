@@ -4,14 +4,16 @@
 #include<vector>
 
 #include "core/game.h"
+#include "core/input.h"
 #include "core/types.h"
-#include "core/commands.h"
-#include<vector>
-#include<algorithm>
-#include<iostream>
-#include<string>
-#include<map>
-#include<functional>
+#include "core/thesaurus.h"
+#include <iostream>
+#include <vector>
+#include <algorithm> 
+#include <unordered_map>
+#include <functional>
+#include <memory>
+#include <bits/stdc++.h>
 
 class Lorn {
 	public:
@@ -19,11 +21,20 @@ class Lorn {
 		~Lorn();
 		int begin();
 	private:
-		Game game;
-		std::map<std::string, std::function<types::ACTION>*> actions;
+		std::unique_ptr<Game> game;
+		Thesaurus thesaurus;
+		const char* helpPath = "data/help";
 
-		std::function<types::ACTION> newGame;
-		std::function<types::ACTION> loadGame;
+		const char* s_new = "new";
+		const char* s_load = "load";
+		const char* s_help = "help";
+		const char* s_game = "game";
+
+		std::function<types::ACTION> newGameAction;
+		std::function<types::ACTION> loadGameAction;
+		std::function<types::ACTION> helpAction;
+
+		Input input;
 };
 
 #endif
